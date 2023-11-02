@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": "functions-framework --target=inngest"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
+    "inngest": "^3.4.1"
+  }
+}
