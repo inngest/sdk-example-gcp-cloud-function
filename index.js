@@ -30,7 +30,7 @@ const minute = inngest.createFunction(
   async ({ step }) => {
     const datetime = await step.run("current-datetime", () => Date.now())
 
-    await step.sleep("1m")
+    await step.sleep("30s", "30s")
 
     await step.sendEvent("hello", {
       name: "test/hello",
