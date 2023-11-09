@@ -4,8 +4,7 @@ const { serve } = require("inngest/express");
 
 const inngest = new Inngest({
   id: "gcp-sample",
-  name: "GCP CloudFunction Example",
-  baseUrl: "https://stage.inn.gs"
+  name: "GCP CloudFunction Example"
 })
 
 const hello = inngest.createFunction(
@@ -45,7 +44,6 @@ functions.http(
   "inngest",
   serve({
     client: inngest,
-    functions: [hello, minute],
-    baseUrl: "https://api.inngest.net"
+    functions: [hello, minute]
   })
 )
