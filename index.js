@@ -40,10 +40,19 @@ const minute = inngest.createFunction(
   }
 )
 
+const sleep = inngest.createFunction(
+  { id: "sleeping", name: "Sleep a lot" },
+  { event: "test/sleep" },
+  async ({ step }) => {
+    await step.sleep("sleep", "5m")
+    return "done"
+  }
+)
+
 functions.http(
   "inngest",
   serve({
     client: inngest,
-    functions: [hello, minute]
+    functions: [hello, minute, sleep]
   })
 )
